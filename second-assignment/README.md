@@ -10,12 +10,11 @@ You'll build an **optimal portfolio** using Markowitz's Modern Portfolio Theory 
 
 1. **Understand Portfolio Risk & Return**
 
-- Portfolio expected return:
-  $$E(R_p) = \sum w_i E(R_i)$$
-- Portfolio variance (risk):
-  $$\sigma_p^2 = \sum \sum w_i w_j \sigma_{ij}$$
-  
-  where $$\sigma_{ij}$$ is the covariance between assets $$i$$ and $$j$$.
+    - Portfolio expected return:
+      $$E(R_p) = \sum w_i E(R_i)$$
+    - Portfolio variance (risk):
+      $$\sigma_p^2 = \sum \sum w_i w_j \sigma_{ij}$$
+    where $$\sigma_{ij}$$ is the covariance between assets $$i$$ and $$j$$.
 2. **Load Asset Data**
 
    - Choose 3 stocks (e.g., AAPL, MSFT, TSLA)
