@@ -1,33 +1,47 @@
-## First assignment
-📌 Simulating a Stock Price Using Geometric Brownian Motion (GBM)
+# 📅 Day 2: Risk & Portfolio Management
 
-Geometric Brownian Motion (GBM) is widely used in financial modeling to simulate stock price movements. This exercise will introduce you to the mathematical foundation of asset price modeling while giving you hands-on experience with Python.
+## 🛠️ Assignment: Implement Markowitz Portfolio Optimization
 
-### 🎯 Objectives:
-1. Write a Python script to simulate a stock price using GBM.
-2. Assume the initial price is **$100**, with a **daily return of 0.1%** and **volatility of 2%**.
-3. Simulate the price for **252 trading days** (one year).
-4. Plot the simulated stock path.
+### **Task Overview**
 
-### 🧠 Formula:
-GBM follows the stochastic differential equation:
+You'll build an **optimal portfolio** using Markowitz's Modern Portfolio Theory (MPT), which balances risk and return by optimizing asset allocation.
 
-$S_{t+1} = S_t \times e^{(\mu - \frac{1}{2} \sigma^2) \Delta t + \sigma \sqrt{\Delta t} \cdot Z}$
+### **Steps to Complete the Assignment:**
 
-Where:
-- $S_t$ = stock price at time $t$
-- $\mu$ = expected return (0.001 per day)
-- $\sigma$ = volatility (0.02 per day)
-- $Z$ = random normal variable (Gaussian noise)
+1. **Understand Portfolio Risk & Return**
 
-### 🛠️ Implementation Steps:
-1. Import necessary libraries (`numpy`, `matplotlib`).
-2. Set up parameters: `initial_price`, `mu`, `sigma`, `days`.
-3. Generate random Gaussian noise for price movements.
-4. Compute the GBM formula iteratively.
-5. Plot the stock price over time.
+   - Portfolio expected return:
+     $$
+     E(R_p) = \sum w_i E(R_i)
+     $$
+   - Portfolio variance (risk):
+     $$
+     \sigma_p^2 = \sum \sum w_i w_j \sigma_{ij}
+     $$
+     where \( \sigma\_{ij} \) is the covariance between assets \( i \) and \( j \).
 
-### 🏆 Expected Outcome:
-A graph showing a randomly simulated stock price path over **one year (252 days)**.
+2. **Load Asset Data**
 
-Good luck! 🚀
+   - Choose 3 stocks (e.g., AAPL, MSFT, TSLA)
+   - Download historical price data using `yfinance`
+   - Calculate daily returns
+
+3. **Construct the Portfolio**
+
+   - Generate random portfolio weights
+   - Compute expected return, risk (variance), and Sharpe Ratio
+   - Plot the **efficient frontier** (risk-return tradeoff curve)
+
+4. **Find the Optimal Portfolio**
+   - Use **scipy.optimize** to find weights maximizing the **Sharpe Ratio**
+   - Compare optimized vs. random portfolios
+
+---
+
+### **Deliverables:**
+
+✅ Python script implementing portfolio optimization.  
+✅ Efficient frontier plot.  
+✅ Optimal portfolio weights (printed or visualized).
+
+---
