@@ -11,10 +11,21 @@ You'll build an **optimal portfolio** using Markowitz's Modern Portfolio Theory 
 1. **Understand Portfolio Risk & Return**
 
     - Portfolio expected return:
-      $$E(R_p) = \sum w_i E(R_i)$$
+      $$E(R_p) = \sum w_i E(R_i)$$. Where:  
+        - $$E(R_p)$$ = Expected return of the portfolio  
+        - $$E(R_i)$$ = Expected return of asset $$i$$  
+        - $$w_i$$ = Weight of asset $$i$$ in the portfolio. $$w_i = \frac{V_i}{V_{\text{total}}}$$. Where:  
+            - $$V_i$$ = Value of asset $$i$$ in the portfolio = amount of money invested in that particular asset
+            - $$V_{\text{total}}$$ = Total value of the entire portfolio  
     - Portfolio variance (risk):
       $$\sigma_p^2 = \sum \sum w_i w_j \sigma_{ij}$$
     where $$\sigma_{ij}$$ is the covariance between assets $$i$$ and $$j$$.
+
+
+**Candidate components:**  
+1. **Asset Returns** - The individual expected returns of assets in the portfolio.  
+2. **Asset Weights** - The proportion of each asset in the portfolio.  
+3. **Portfolio Expected Return** - The weighted sum of individual asset returns. 
 2. **Load Asset Data**
 
    - Choose 3 stocks (e.g., AAPL, MSFT, TSLA)
