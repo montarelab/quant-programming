@@ -42,7 +42,9 @@
 
 ### 3. Black-Scholes Pricing Formula
 
-The **Black-Scholes Model** provides a closed-form solution to price European options.
+The **Black-Scholes Model** provides a closed-form solution to calculate price of European options.
+
+**European options** - is a type of options contract where the buyer or seller is able to execute the option only at its expiration date, not before.
 
 #### **European Call Option Price:**
 
@@ -83,15 +85,34 @@ S_T = S_0 e^{(r - \frac{1}{2} \sigma^2)T + \sigma W_T}
 $$
 
 - Where $W_T$ is a Wiener process (random normal variable).
-- The option price is computed as the discounted average payoff:
+- The option price is computed as the **discounted average payoff**:
+
+**Discounted average payoff** - refers to the average of discounted payoffs over a certain number of periods, T. (Game Theory)
 
 $$
-C = e^{-rt} \mathbb{E} [\max(S_T - K, 0)]
+C = e^{-rt} \mathbb{E} [\max(S_T - K, 0)] \quad \text{(Call Option Price)}
 $$
 
+- $C$: The price of the European call option.
+- $e^{-rt}$: The discount factor, accounting for the time value of money.
+- $\mathbb{E} [\max(S_T - K, 0)]$: The expected payoff of the call option at expiration, discounted to the present.
+
 $$
-P = e^{-rt} \mathbb{E} [\max(K - S_T, 0)]
+P = e^{-rt} \mathbb{E} [\max(K - S_T, 0)] \quad \text{(Put Option Price)}
 $$
+
+- $P$: The price of the European put option.
+- $e^{-rt}$: The discount factor, accounting for the time value of money.
+- $\mathbb{E} [\max(K - S_T, 0)]$: The expected payoff of the put option at expiration, discounted to the present.
+
+Here:
+
+- $S_T$: The underlying asset price at expiration.
+- $K$: The strike price of the option.
+- $r$: The risk-free interest rate.
+- $t$: The time to expiration.
+- $\max$: Ensures that the payoff is non-negative, as options cannot have negative payoffs.
+- $\mathbb{E}$: Represents the expected value under the risk-neutral measure.
 
 - The larger the number of simulations, the more accurate the estimate.
 
