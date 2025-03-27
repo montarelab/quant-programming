@@ -16,9 +16,9 @@
 
 ### 2. Greeks (Delta, Gamma, Vega)
 
-- **Delta (Δ)**: Sensitivity of the option price to the underlying asset price.
-- **Gamma (Γ)**: Sensitivity of Delta to the underlying asset price.
-- **Vega (ν)**: Sensitivity of the option price to volatility changes.
+- **Delta ($\Delta$)**: Sensitivity of the option price to the underlying asset price.
+- **Gamma ($\Gamma$)**: Sensitivity of Delta to the underlying asset price.
+- **Vega ($\nu$)**: Sensitivity of the option price to volatility changes.
 
 ### 3. Black-Scholes Pricing Formula
 
@@ -26,49 +26,52 @@ The **Black-Scholes Model** provides a closed-form solution to price European op
 
 #### **European Call Option Price:**
 
-\[
+$$
 C = S_0 N(d_1) - Ke^{-rt} N(d_2)
-\]
+$$
 
 #### **European Put Option Price:**
 
-\[
+$$
 P = Ke^{-rt} N(-d_2) - S_0 N(-d_1)
-\]
+$$
 
 Where:
-\[
-d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2) t}{\sigma \sqrt{t}}
-\]
-\[
-d_2 = d_1 - \sigma \sqrt{t}
-\]
 
-- \(S_0\) = Current stock price
-- \(K\) = Strike price
-- \(r\) = Risk-free interest rate
-- \(\sigma\) = Volatility
-- \(t\) = Time to expiration
-- \(N(d)\) = Cumulative distribution function of the standard normal distribution
+$$
+d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2) t}{\sigma \sqrt{t}}
+$$
+
+$$
+d_2 = d_1 - \sigma \sqrt{t}
+$$
+
+- $S_0$ = Current stock price
+- $K$ = Strike price
+- $r$ = Risk-free interest rate
+- $\sigma$ = Volatility
+- $t$ = Time to expiration
+- $N(d)$ = Cumulative distribution function of the standard normal distribution
 
 ### 4. Monte Carlo Method for Option Pricing
 
 - Simulates multiple future price paths of the underlying asset using random sampling.
 - Each path follows a geometric Brownian motion:
 
-\[
+$$
 S_T = S_0 e^{(r - \frac{1}{2} \sigma^2)T + \sigma W_T}
-\]
+$$
 
-- Where \( W_T \) is a Wiener process (random normal variable).
+- Where $W_T$ is a Wiener process (random normal variable).
 - The option price is computed as the discounted average payoff:
 
-\[
+$$
 C = e^{-rt} \mathbb{E} [\max(S_T - K, 0)]
-\]
-\[
+$$
+
+$$
 P = e^{-rt} \mathbb{E} [\max(K - S_T, 0)]
-\]
+$$
 
 - The larger the number of simulations, the more accurate the estimate.
 
@@ -97,6 +100,4 @@ P = e^{-rt} \mathbb{E} [\max(K - S_T, 0)]
 
 - Implement the **Greeks** (Delta, Gamma, Vega) for both methods.
 - Use **Variance Reduction Techniques** to improve Monte Carlo efficiency.
-- Try **Implied Volatility Calculation**: Given an option price, find \(\sigma\).
-
--
+- Try **Implied Volatility Calculation**: Given an option price, find $\sigma$.
