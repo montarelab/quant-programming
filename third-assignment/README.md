@@ -14,6 +14,26 @@
 - A **call option** gives the holder the right (but not the obligation) to buy an asset at a specified price (strike price) on or before expiration.
 - A **put option** gives the holder the right to sell an asset at a specified price on or before expiration.
 
+### Call Option
+
+| **Role**               | **Rights / Obligations**                             | **Profit / Loss Condition**                | **Outcome if $S_T > K$**                       | **Outcome if $S_T \leq K$**             |
+| ---------------------- | ---------------------------------------------------- | ------------------------------------------ | ---------------------------------------------- | --------------------------------------- |
+| **Call Buyer (Bull)**  | **Right** to buy the asset at the strike price $K$   | Profits when $S_T > K$ (higher the better) | Exercises the option, buys at $K$ and gains    | Option expires worthless, loses premium |
+| **Call Seller (Bear)** | **Obligation** to sell the asset at $K$ if exercised | Profits when $S_T \leq K$ (keeps premium)  | Suffers a loss, has to sell below market price | Keeps the premium, no obligation        |
+
+---
+
+### Put Option
+
+| **Role**              | **Rights / Obligations**                            | **Profit / Loss Condition**               | **Outcome if $S_T < K$**                      | **Outcome if $S_T \geq K$**             |
+| --------------------- | --------------------------------------------------- | ----------------------------------------- | --------------------------------------------- | --------------------------------------- |
+| **Put Buyer (Bear)**  | **Right** to sell the asset at the strike price $K$ | Profits when $S_T < K$ (lower the better) | Exercises the option, sells at $K$ and gains  | Option expires worthless, loses premium |
+| **Put Seller (Bull)** | **Obligation** to buy the asset at $K$ if exercised | Profits when $S_T \geq K$ (keeps premium) | Suffers a loss, has to buy above market price | Keeps the premium, no obligation        |
+
+- **$S_T$** = Underlying asset price at expiration
+- **$K$** = Strike price
+- **Premium** = The cost the buyer pays to enter the contract
+
 ### 2. Greeks (Delta, Gamma, Vega)
 
 - **Delta ($\Delta$)**: Sensitivity of the option price to the underlying asset price.
